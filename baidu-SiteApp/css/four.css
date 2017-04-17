@@ -1,0 +1,429 @@
+a img{
+	border:none;
+}
+* {
+	margin:0;
+	padding:0;
+}
+li {
+	list-style: none;
+}
+.clear {
+	clear:both;
+	height:0;
+	overflow:hidden;
+}
+.clearfix:after {
+	content:'.';
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+	}
+.clearfix {*zoom:1;}
+.top{
+	padding-bottom:7px;
+}
+.top .top-l{
+	float:left;
+	padding-right:7px;
+}
+.top .top-l li{
+	float:left;
+	margin-left:17px;
+}
+.top ul li a{
+	font-size:12px;
+	color:#333333;
+	line-height:30px;
+	text-decoration:none;
+}
+.top ul li a:hover{
+	color:#ff0000;
+}
+.top .top-r{
+	float:right;
+}
+.top .top-r li{
+	float:right;
+	margin-right:10px;
+}
+.top .top-r li span{
+	padding-right:9px;
+	line-height:30px;
+	font-size:12px;
+	color:#7e337e;
+}
+.m {
+	width:961px;
+	margin:0 auto;
+}
+.top-30{
+	height:345px;
+	background:url(i/bjt1.png) no-repeat center 0;
+}
+.top-30-nr{
+	height:345px;
+	background:url(i/bjt1.png) no-repeat center 0;
+}
+.yiceng{
+	height:235px;
+	background:url(i/bjt2.png) no-repeat center 0;
+}
+.pub-biaoti1{
+	height:51px;
+	line-height:51px;
+	font-size:22px;
+	color:#333333;
+	font-weight:normal;
+	padding-left:78px;
+	background:url(i/bj-bt1.png) no-repeat 0 0;
+}
+.bd-neirong{
+	padding-left:30px;
+}
+.bd-neirong li{
+	margin-top:20px;
+}
+.bd-neirong li p{
+	font-size:14px;
+	color:#777777;
+	line-height:22px;
+}
+.erceng{
+	height:290px;
+	background:url(i/bjt3.png) no-repeat center 0;
+}
+.chuangjian .btbj2{
+	background:url(i/bj-bt2.png) no-repeat 10px 0;
+}
+.cj-neirong{
+}
+.cj{
+	float:left;
+	width:150px;
+	height:189px;
+	padding:20px 5px 29px 5px;
+}
+.cj .chj{
+	width:150px;
+	padding-top:46px;
+	height:114px;
+}
+.cj .chj-1{
+	background-color:#ff6666;
+}
+.cj .chj-2{
+	background-color:#ff6666;
+}
+.cj .chj-3{
+	background-color:#ff6666;
+}
+.cj .chj-4{
+	background-color:#ff6666;
+}
+.cj .chj-5{
+	background-color:#ff6666;
+}
+.cj .chj-6{
+	background-color:#ff6666;
+}
+.ccj{
+	width:77px;
+	height:77px;
+	margin:0 36px 38px 36px;
+}
+.ccj-1{
+	background:url(i/chj.png) no-repeat 0 0;
+}
+.ccj-2{
+	background:url(i/chj.png) no-repeat -77px 0;
+}
+.ccj-3{
+	background:url(i/chj.png) no-repeat -154px 0;
+}
+.ccj-4{
+	background:url(i/chj.png) no-repeat  -231px 0;
+}
+.ccj-5{
+	background:url(i/chj.png) no-repeat  -308px 0;
+}
+.ccj-6{
+	background:url(i/chj.png) no-repeat -385px 0;
+}
+.cj em{
+	display:block;
+	width:150px;
+	line-height:29px;
+	font-size:14px;
+	color:#ffffff;
+	text-align:center;
+	font-style:normal;
+	background-color:#333333;
+}
+.cj em span{
+	padding:0 17px 0 14px;
+}
+.cj .chj-1{
+	background-color:#ff6666;
+}
+.cj .chj-2{
+	background-color:#ffcc66;
+}
+.cj .chj-3{
+	background-color:#9acc99;
+}
+.cj .chj-4{
+	background-color:#66cbff;
+}
+.cj .chj-5{
+	background-color:#c26867;
+}
+.cj .chj-6{
+	background-color:#637164;
+}
+.sanceng{
+	background:url(i/bjt4.png) no-repeat center 0;
+	background-color:#f9f9f9;
+}
+.sanceng-nr{
+	padding-top:14px
+}
+.liucheng{
+	width:470px;
+	float:left;
+}
+.pub-biaoti2{
+	background:url(i/biaoti2-1.png) repeat-x 0 45px;
+}
+.pub-biaoti2-1{
+	line-height:43px;
+	font-size:18px;
+	color:#777777;
+	width:151px;
+	border-bottom:3px #333333 solid;
+}
+.liuchengnr{
+	padding:0 0 30px 0;
+}
+.liuchengnr li{
+	line-height:16px;
+	width:450px;
+	margin-top:14px;
+	padding:1px 0 0 ;
+}
+.liuchengnr li p{
+	line-height:22px;
+}
+.liuchengnr li i{
+	float:left;
+	line-height:22px;
+	width:16px;
+	padding-right:4px;
+	color:#ffffff;
+	font-size:12px;
+	background:url(i/bj-bt3.png) no-repeat 1px 3px;
+	text-align:center;
+}
+.pub-p{
+	font-size:14px;
+	color:#333333;
+}
+.jiangxiang{
+	width:470px;
+	float:left;
+	margin-left:20px;
+}
+.biaoti2{
+	margin-left:20px;
+}
+.jiangxiangnr{
+	padding:23px 0 0 10px;
+}
+.xiao-bt{
+	float:left;
+	font-size:18px;
+	color:#474747;
+	line-height:44px;
+	width:107px;
+	padding-left:60px;
+	background:url(i/bj-bt4.png) no-repeat 10px 6px;
+}
+.shuzi{
+	float:left;
+	font-size:18px;
+	color:#ff6666;
+	width:100px;
+	line-height:44px;
+}
+.inp-btn{
+	float:left;
+	width:219px;
+	height:44px;
+	border:none;
+	font-size:18px;
+	color:#ffffff;
+	height:44px;
+	margin-top:13px;
+	margin-right:15px;
+}
+.btn1{
+	background:url(i/bj-bnt1.png) no-repeat 0 0;
+}
+.btn2{
+	background:url(i/bj-bnt2.png) no-repeat 0 0;
+}
+.siceng{
+	padding-top:14px;
+}
+.pub-baiduyun{
+	padding-top:20px;
+}
+.pub-baiduyun .book{
+	float:left;
+	width:150px;
+	height:150px;
+	padding-right:40px;
+}
+.pub-baiduyun .baiduyunnr{
+	float:left;
+	width:706px;
+}
+.baiduyunnr h5{
+	font-size:18px;
+	color:#333333;
+	font-weight:normal;
+	line-height:38px;
+	padding:0 0 6px 0;
+}
+.baiduyunnr p{
+	line-height:22px;
+}
+.anli{
+	margin-top:29px;
+	overflow:hidden;
+}
+.anli h3{
+	float:left;
+}
+.pub-r-biaot1{
+	float:right;
+	line-height:36px;
+	font-size:14px;
+	color:#666666;
+	font-style:normal;
+	padding:0 13px 2px 33px;
+	background:url(i/bj-bt5.png) no-repeat 0 1px;
+}
+.anli-nr{
+	width:985px;
+	padding-top:12px;
+}
+.pub-anli{
+	float:left;
+	width:305px;
+	margin-right:20px;
+}
+.pub-anli .anli-tp{
+	display:block;
+}
+.pub-anli .ader{
+	background-color:#f1f1f1;
+	height:232px;
+}
+.pub-anli .ader .ewm{
+	float:left;
+	width:60px;
+	height:60px;
+	padding:20px 20px 0 20px;
+}
+.pub-anli .ader .anli-p{
+	float:left;
+	line-height:20px;
+	width:194px;
+	font-size:12px;
+	padding-top:16px;
+}
+.wuliuceng{
+	background-color:#f9f9f9;
+}
+.wuceng{
+	margin-top:36px;
+	padding-top:15px;
+}
+.jinqixw{
+	width:640px;
+	float:left;
+	
+}
+.SiteApp{
+	padding-top:20px;
+}
+.lianxiwm{
+	float:left;
+	width:308px;
+	margin-left:12px;
+}
+.pub-span{
+	float:left;
+	line-height:26px;
+	font-size:14px;
+	color:#333333;
+	width:305px;
+	height:26px;
+	overflow:hidden;
+}
+.liuceng{
+	margin-top:24px;
+}
+.pub-good{
+	
+}
+.x-daohang{
+	float:left;
+	width:148px;
+}
+.x-daohang h2{
+	line-height:56px;
+	padding:15px 35px 0 35px;
+	font-size:22px;
+	color:#333333;
+	font-weight:normal;
+	position:relative;
+}
+.x-daohang .cur{
+	color:#44b2ff;
+}
+.x-daohang .cur i{
+	display:block;
+}
+.x-daohang h2 i{
+	position:absolute;
+	background:url(i/x-daohang-tb.png) no-repeat 0 0;
+	width:12px;
+	height:19px;
+	left:137px;
+	top:38px;
+	display:none;
+}
+.zhshym{
+	float:left;
+	width:810px;
+	overflow:hidden;
+	border:1px #ebebeb solid;
+	margin-top:23px;
+	background-color:#fff;
+}
+.zhshym .zhanshi{
+	width:850px;
+	padding-left:9px;
+	display:none;
+}
+.zhshym .zhanshi img{
+	width:149px;
+	height:151px;
+	float:left;
+	padding:20px 20px 0 20px;
+	margin-right:17px;
+}
+
