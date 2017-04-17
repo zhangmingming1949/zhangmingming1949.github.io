@@ -1,0 +1,292 @@
+a img{
+	border:none;
+}
+*{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style:none;	
+}
+.clear {
+	clear: both;
+	height: 0;
+	overflow: hidden;
+}
+.clearfix:after{
+	content:'.';
+	display:block;
+	height:0px;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix{*zoom:1;}
+.top{
+	width:995px;
+	height:146px;
+	background:url(i/bja.png);
+	margin:0 auto;
+}
+.top ul{
+	margin-right:60px;
+}
+.top ul li{
+	float:right;
+	padding-right:19px;
+	line-height:41px;
+	margin-top:60px;
+}
+.top ul li a{
+	color:#06a5ec;
+	font-size:11px;
+	text-decoration:none;
+}
+.top input{
+	width:186px;
+	height:23px;
+	float:right;
+	margin-right:90px;
+}
+.aa{
+	width:967px;
+	background:url(i/bjb.png) repeat-x 0 -40px;
+}
+.aa .bb{
+	width:967px;
+	background:url(i/bjb.png) no-repeat 0 -80px;
+}
+.aa .bb .cc{
+	width:967px;
+	background:url(i/bjb.png) no-repeat right 0;
+}
+.caidan{
+	height:40px;
+	width:967px;
+	margin:0 auto;
+}
+.caidan .aa .bb .cc ul{
+	margin-left:49px;
+}
+.caidan .aa .bb .cc ul li {
+	float:left;
+	line-height:40px;
+	padding-right:28px;
+}
+.caidan .aa .bb .cc ul li a{
+	color:white;
+	text-decoration:none;
+	font-size:16px;
+}
+.g{
+	width:967px;
+	height:330px;
+	margin:0 auto;
+	background:url(i/bjc.png) no-repeat 0 0;
+	
+}
+.g span{
+	float:left;
+	display:block;
+	margin-top:25px;
+}
+.erceng{
+	width:968px;
+	height:238px;
+	margin:14px auto 0;
+	/*border:1px red solid;*/
+}
+.kecheng{
+	height:238px;
+	width:371px;
+	float:left;
+}
+.xinwen{
+	height:238px;
+	width:302px;
+	float:left;
+}
+.xuexiao{
+	height:238px;
+	width:292px;
+	overflow:hidden;
+	float:left;
+}
+.xueyuan{
+	height:208px;
+	width:372px;
+	float:left;
+}
+.shizi{
+	height:208px;
+	width:595px;
+	float:left;
+}
+
+.biaoti{
+	height:58px;
+	margin-left:17px;
+}
+
+.biaoti h3{
+	color:#06a5ec;
+	font-size:19px;
+	font-family:normal;
+	float:left;
+	line-height:44px;
+}
+.biaoti h4{
+	color:#a8d412;
+	font-size:13px;
+	margin-left:8px;
+	float:left;
+	line-height:49px;
+}
+.biaoti .more{
+	float:right;
+	line-height:19px;
+	font-size:12px;
+	color:#06a5ec;
+	text-decoration:none;
+	background:url(i/bjd.png) no-repeat 0 0;
+	width:66px;
+	text-align:center;
+	margin-right:16px;
+	margin-top:12px;
+}
+.kecheng .kemu li{
+	margin-bottom:7px;
+}
+.kecheng  .kemu img{
+	float:left;
+	margin-top:2px;
+	margin-left:17px;
+}
+.kecheng .kemu .wenz{
+	float:left;
+	width:201px;
+	margin-left:13px;
+	line-height:21px;
+	font-style:normal;
+	font-size:11px;
+	color:#605d5d;
+}
+.kecheng .kemu .bk1 img{
+	border:1px #06a5ec solid;
+	padding:3px;
+}
+.kecheng .kemu .bk2 img{
+	border:1px #a8d412 solid;
+	padding:3px;
+}
+.kecheng .kemu .bk3 img{
+	border:1px #fda803 solid;
+	padding:3px;
+}
+
+.xinwen ul li{
+	background:url(i/bje.png) repeat-y 0 0;
+	height:42px;
+}
+.xinwen ul li .time{
+	font-size:9px;
+	line-height:9px;
+	margin-left:36px;
+}
+.xinwen ul li a{
+	color:#06a5ec;
+	font-size:12px;
+	line-height:28px;
+	text-decoration:none;
+	margin-left:36px;
+}
+.xuexiao img{
+	float:left;
+	padding-right:24px;
+	padding-bottom:18px;
+	margin-top:7px;
+}
+.xuexiao p{
+	font-size:12px;
+	color:#605d5d;
+	line-height:23px;
+}
+.xuexiao a{
+	color:#06a5ec;
+	font-size:12px;
+	text-decoration:none;
+}
+.sanceng{
+	width:967px;
+	height:208px;
+	margin:14px auto 0;
+	/*border:1px red solid;*/
+}
+.xueyuan img{
+	float:left;
+	border:1px #dee2e2 solid;
+	padding:3px;
+	margin-left:14px;
+	display:block;
+}
+.xueyuan ol{
+	margin-left:15px;
+	float:left;
+	width:220px;
+	height:105px;
+}
+.xueyuan ol a{
+	font-size:13px;
+	color:#06a5ec;
+	line-height:27px;
+	text-decoration:none;
+}
+.xueyuan ol .wenzi{
+	font-size:12px;
+	line-height:21px;
+	color:#605d5d;
+}
+.shizi ul{
+	margin-left:65px;
+}
+.shizi ul li{
+	float:left;
+	width:80px;
+	padding-left:16px;
+}
+.shizi ul li img{
+	display:block;
+	border:1px #d3d8d8 solid;
+	padding:3px;
+}
+.shizi ul li .teacher{
+	text-align:center;
+	color:#06a5ec;
+	font-size:13px;
+	line-height:31px;
+	text-decoration:none;
+	display:block;
+}
+.bottom{
+	width:967px;
+	height:38px;
+	border:1px #dbdddd solid;
+	margin:0 auto;
+}
+.bottom i{
+	float:left;
+	font-size:11px;
+	font-style:normal;
+	line-height:38px;
+	color:#605d5d;
+	margin-left:23px;
+}
+.bottom li a{
+	float:right;
+	line-height:38px;
+	text-decoration:none;
+	color:#06a5ec;
+	font-size:11px;
+	padding-left:22px;
+	margin-right:42px;
+}
+
