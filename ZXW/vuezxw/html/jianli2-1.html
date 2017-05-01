@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>我的简历</title>
+    <meta name="keywords" content="关键词"/>
+    <meta name="description" content="描述"/>
+   	<link rel="stylesheet" type="text/css" href="../css/jianli2-1.css">
+   	<script src="/js/jquery.js"></script>
+	<script type="text/javascript" src="../js/vue.js"></script>
+	<script type="text/javascript" src="../js/sea.js"></script>
+</head>
+<body>
+	<div class="zxw-top">
+		<div class="m zxw-top-nr clearfix">
+			<img class="f-l" src="images/bt.png" alt="">
+			<b class="f-r" name="">王成伟</b>
+			<ul class="clearfix">
+				<li>简历管理</li>
+				<li>公司首页</li>
+				<li>发布职位</li>
+				<li>职位管理</li>
+			</ul>
+		</div>
+	</div>
+	<div id="all" class="all">
+		<div class="m txall clearfix">
+			<!-- 左边内容 -->
+			<div id="adiv" class="txall-l f-l">
+				<div class="top clearfix">
+					<h2>我的简历</h2>
+					<a href = "#">预览简历</a>
+				</div><!-- top我的简历 -->
+				<div class="one everychunk">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">基本信息</h3>
+						<b v-on:click="pubedit('v1')">编辑</b>
+					</div><!-- pub-bt -->
+					<div class="kong va" v-bind:class="{ 'v-show': v1.isA }"></div>
+					<div class="tx1 vb clearfix" v-bind:class="{ 'v-show': v1.isB }"><!-- 左右的公共父级 -->
+						<div class="tx1-1 clearfix">
+							<ul class="clearfix">
+								<li><input v-model="resume.name" class="inp1" id="name" type="text"></li>
+								<li>
+									<b>性别：</b>
+									<input v-model="resume.sex" type="radio" id="sex1" name="sex" value="男">
+									<label for="sex1">男</label>
+									<input v-model="resume.sex" type="radio" id="sex2" name="sex" value="女">
+									<label for="sex2">女</label>
+								</li>
+								<li><input v-model="resume.age" class="inp1" type="text"></li>
+								<li class="one-xialk1">
+									<var class="xialk1">{{resume.work_experience | typeSelect"工作经验"}}</var>
+									<div class="xialk-nr1">	
+										<select v-model="resume.work_experience" name="" id="">
+											<option>无</option>
+											<option>1年</option>
+											<option>2年</option>
+											<option>3年以上</option>
+										</select>
+									</div>
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">{{resume.city_live.province | typeSelect "现居地（省）"}}</var>
+									<div class="xialk-nr1">
+										<!-- <input type="text" value="点击输入"> -->
+										<select v-model="resume.city_live.province" name="" id="">
+											<option>新疆</option>
+											<option>西藏</option>
+											<option>云南</option>
+											<option>广西</option>
+											<option>广东</option>
+											<option>福建</option>
+											<option>浙江</option>
+										</select>
+									</div>	
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">{{ resume.city_live.city | typeSelect "现居地（市）"}}</var>
+									<div class="xialk-nr1">
+										<!-- <input type="text" value="点击输入"> -->
+										<select v-model="resume.city_live.city" name="" id="">
+											<option>北京</option>
+											<option>青岛</option>
+											<option>深圳</option>
+											<option>苏州</option>
+										</select>
+									</div>
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">{{resume.city_birth.province | typeSelect"户口地（省）"}}</var>
+									<div class="xialk-nr1">
+										<!-- <input type="text" value="点击输入"> -->
+										<select v-model="resume.city_birth.province" name="" id="">
+											<option>新疆</option>
+											<option>西藏</option>
+											<option>云南</option>
+											<option>广西</option>
+											<option>广东</option>
+											<option>福建</option>
+											<option>浙江</option>
+										</select>
+									</div>
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">{{resume.city_birth.city | typeSelect"户口地（市）"}}</var>
+									<div class="xialk-nr1">
+										<!-- <input type="text" value="点击输入"> -->
+										<select v-model="resume.city_birth.city" name="" id="">
+											<option>青岛</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+										</select>
+									</div>
+								</li>
+							</ul>
+							<div class="pub-queren clearfix">	
+								<input v-on:click="pubbc('v1')" class="but1 baocun" type="button" value="保存">
+								<input class="but1" type="button" value="取消">
+							</div>
+						</div>
+						<div class="tx1-2">
+							<img src="images/toux.png" alt="">
+							<p>上传头像</p>
+							<label for="out"><input id="out" v-model="resume.resigned" value="离职" type="checkbox"><i>目前离职中</i></label>
+						</div>
+					</div>
+					<div class="one3 vc clearfix" v-bind:class="{ 'v-show': v1.isC }">
+						<div class="one3-l">
+							<h6>{{resume.name}}<var>{{resume.sex}}/{{resume.age}}岁</var></h6>
+							<ul id="oneul">
+								<li><i>现居地：</i><span>{{resume.city_live.city}}</span></li>
+								<li><i>户口地：</i><span>{{resume.city_birth.city}}</span></li>
+								<li><i>工作经验：</i><span>{{resume.work_experience}}</span></li>
+								<li><i>目前状态：</i><span>{{ resume.resigned | typeChecked"在职"}}</span></li>
+							</ul>
+						</div>
+						<img src="images/toux1.png" alt="">
+					</div>				
+				</div>
+		
+				<div class="one two everychunk">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">联系方式</h3>
+						<b v-on:click="pubedit('v2')">编辑</b>
+					</div><!-- pub-bt -->
+					<div class="kong va" v-bind:class="{ 'v-show': v2.isA }"></div>
+					<div class="vb two-nr" v-bind:class="{ 'v-show': v2.isB }">
+						<div class="two-tx clearfix">
+							<input v-model="resume.telephone" class="inp2" type="text">
+							<input v-model="resume.email" class="inp2" type="text">
+							<i>请输入有效的邮箱</i>
+						</div>
+						<div class="pub-queren clearfix">
+							<input v-on:click="pubbc('v2')" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="two2 vc clearfix" v-bind:class="{ 'v-show': v2.isC }">
+						<b>{{resume.telephone}}</b><i>{{resume.email}}</i>
+					</div>
+				</div><!-- two -->
+																
+				<div class="one three everychunk">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">个人形象</h3>
+						<b v-on:click="pubedit('v3')" class="pb">编辑</b>
+					</div>
+					<div class="one2 va clearfix" v-bind:class="{ 'v-show': v3.isA }">
+						<a v-on:click="pubadd('v3')" class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>通过生活照来展示你的形象</i>
+							<i>提高对企业的吸引力</i>
+							<span>完善个人形象</span>
+						</div>
+					</div>
+					<div class="vb three-nr" v-bind:class="{ 'v-show': v3.isB }">
+						<ul class="clearfix">
+							<li><input v-model="resume.height" type="text" placeholder="身高"><i>厘米</i></li>
+							<li><input v-model="resume.weight" type="text" placeholder="体重"><i>公斤</i></li>
+						</ul>
+						<ol class="clearfix">
+							<li><img src="images/shhuozh.png" alt=""><b>上传生活照</b></li>
+							<li><img src="images/shhuozh.png" alt=""><b>上传生活照</b></li>
+							<li><img src="images/shhuozh.png" alt=""><b>上传生活照</b></li>
+						</ol>
+						<div class="pub-queren clearfix">
+							<input v-on:click="pubbc('v3')" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="vc three2" v-bind:class="{ 'v-show': v3.isC }">
+						<ul class="clearfix">
+							<li><span>身高：</span><b>{{resume.height}}厘米</b></li>
+							<li><span>体重：</span><b>{{resume.weight}}公斤</b></li>
+						</ul>
+						<div class="three-img clearfix">
+							<img class="img1" src="" alt=""><img src="" alt=""><img src="" alt="">
+						</div>
+					</div>            
+				</div>
+
+				<div class="one four everychunk">
+					<div class="pub-bt clearfix">
+						<h3>求职意向</h3>
+						<b v-on:click="pubedit('v4')" class="pb">编辑</b>
+					</div>
+					<div class="va one2 clearfix" v-bind:class="{'v-show':v4.isA}">
+						<a v-on:click="pubadd('v4')" class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>填写准确的期望工作能大大提高求职成功率哦</i>
+							<i>快来添加期望工作吧！</i>
+							<span>添加期望工作</span>
+						</div>
+					</div>
+					<div class="vb four-nr" v-bind:class="{'v-show':v4.isB}">
+						<ul class="clearfix">
+							<li>
+								<var>期望行业:</var>
+								<div class="one-xialk1 four-xialk1">
+									<b class="xialk1">{{resume.intent[0].industry | typeSelect"（最多选择三个行业）"}}</b>
+									<!-- <div class="xialk-nr1"> -->
+										<select v-model="resume.intent[0].industry">
+											<option>互联网/IT</option>
+											<option>体育</option>
+											<option>教育</option>
+											<option>物流</option>
+										</select>
+									<!-- </div> -->
+								</div>
+							</li>
+							<li><var>期望职位:</var><input v-model="resume.intent[0].position" class="inp3" type="text"></li>
+							<li><var>期望底薪:</var><input v-model="resume.intent[0].salary" class="inp3" type="text"></li>
+							<li>
+								<var>期望工作地区:</var>
+								<div class="four-r clearfix">
+									<div class="one-xialk1 four-xialk2">
+										<em class="xialk1">{{resume.intent[0].area_province | typeSelect"省"}}</em>
+										<div class="xialk-nr1 xialk-nr2">
+											<!-- <input type="text" value="点击输入"> -->
+											<select v-model="resume.intent[0].area_province">
+												<option>新疆</option>
+												<option>西藏</option>
+												<option>云南</option>
+												<option>广西</option>
+												<option>广东</option>
+												<option>福建</option>
+												<option>浙江</option>
+											</select>
+										</div>
+									</div>
+									<div class="one-xialk1 four-xialk2">
+										<em class="xialk1">{{resume.intent[0].area_city | typeSelect"市"}}</em>
+										<div class="xialk-nr1 xialk-nr2">
+											<!-- <input type="text" value="点击输入"> -->
+											<select v-model="resume.intent[0].area_city">
+												<option>北京</option>
+												<option>上海</option>
+												<option>杭州</option>
+												<option>广州</option>
+												<option>深圳</option>
+												<option>南京</option>
+											</select>
+										</div>
+									</div>
+									<label for=""><input type="checkbox"><i>可出差</i></label>
+								</div>
+							</li>
+							<li><var>期望销售产品:</var><input v-model="resume.intent[0].production" class="inp3" type="text"></li>
+							<li>
+								<var>期望销售方式:</var>
+								<div class="xiaoshoufsh clearfix">
+									<label for=""><input v-model="resume.intent[0].sell_mode" value="0" type="checkbox"><i>店面销售</i></label>
+									<label for=""><input v-model="resume.intent[0].sell_mode" value="1" type="checkbox"><i>渠道销售</i></label>
+									<label for=""><input v-model="resume.intent[0].sell_mode" value="2" type="checkbox"><i>电话销售</i></label>
+									<label for=""><input v-model="resume.intent[0].sell_mode" value="3" type="checkbox"><i>网络销售</i></label>
+									<label for=""><input v-model="resume.intent[0].sell_mode" value="4" type="checkbox"><i>面访销售</i></label>
+									<label for=""><input v-model="resume.intent[0].sell_mode" value="5" type="checkbox"><i>大客户销售</i></label>
+								</div>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input v-on:click="pubbc('v4')" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="vc four2" v-bind:class="{'v-show':v4.isC}">
+						<ul class="four2-nr">
+							<li><span>期望行业：</span><b>{{resume.intent[0].industry}}</b></li>
+							<li><span>期望职位：</span><b>{{resume.intent[0].position}}</b></li>
+							<li><span>期望工作地区：</span><b>{{resume.intent[0].area_city}}</b></li>
+							<li><span>期望底薪：</span><b>{{resume.intent[0].salary}}k</b></li>
+							<li><span>期望销售产品：</span><b>{{resume.intent[0].production}}</b></li>
+							<li><span>销售方式：</span>{{{ resume.intent[0].sell_mode | sell_type}}}</li>
+						</ul>
+					</div>
+				</div>
+									
+				<div class="one five everychunk">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">工作经历</h3>
+						<b class="pb" v-on:click="add(-100,'v5','wk')">添加</b>
+					</div>
+					<div class="one2 va clearfix" v-bind:class="{'v-show':v5.isA }">
+						<a class="ashzi" href="javascript:;" v-on:click="add(-1,'v5',wk)"></a>
+						<div class="one2-r">
+							<i>针对销售职位定制的工作经历，更加专业</i>
+							<i>可以更加充分的展示你的工作能力</i>
+							<span>添加工作经历</span>
+						</div>
+					</div>
+					<div class="vb five-nr" v-bind:class="{'v-show':v5.isB }">
+						<ul class="clearfix">
+							<li>
+								<input v-model="wk.company" class="inp2 o" type="text">
+								<input v-model="wk.position" class="inp2 t" type="text">
+							</li>
+							<li>
+								<b>开始年份</b><b>开始月份</b><b>结束年份</b><b>结束月份</b>
+							</li>
+							<li><label class="clearfix" for=""><input type="checkbox"><i>管理岗位</i></label>
+								<input class="inp2" value="汇报对象" type="text">
+								<input class="inp2" value="下属人数" type="text">
+							</li>
+							<li><textarea class="textarea1" name="" id="" cols="30" rows="10"></textarea></li>
+							<li>
+								<div class="shujushuohua">
+									<h5>让数据说话，快来展示你的傲人业绩吧~</h5>
+									<ul class="clearfix">
+										<li>
+											<input type="text" value="月销售额">
+											<i>万元</i>
+										<li>
+											<input type="text" value="年销售额">
+											<i>万元</i>
+										</li>
+										<li>
+											<input type="text" value="目标完成率">
+										</li>
+										<li>
+											<input type="text" value="产品">
+										</li>
+										<li class="one-xialk1">
+											<b class="xialk1">{{wk.sell_target | typeSelect "销售目标"}}</b>
+											<div class="xialk-nr1">
+												<select v-model="wk.sell_target">
+													<option>小孩</option>
+													<option>老人</option>
+													<option>警察</option>
+													<option>医生</option>			
+												</select>
+											</div>
+										</li>
+										<li>
+											<input type="text" value="销售方式">
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<label class="clearfix" for=""><input type="checkbox"><i>添加更多描述</i></label>
+								<textarea class="textarea2" name="" id="" cols="30" rows="10"></textarea>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input v-on:click="save(wk,'v5',resume.work_history)" class="but1 baocun" type="button" value="保存">
+							<input v-on:click="cancel('v5',resume.work_history)" class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="vc five2" v-bind:class="{'v-show':v5.isC }">
+						<ul class="clearfix newul">
+							<li class="everyli" v-for="item in resume.work_history" track-by="$index">
+					            <span>{{ item.company }} - {{ item.position }}</span>
+					            <div class="five2-1"><i v-on:click = "edit('wk',item,$index,'v5')">编辑</i><i v-on:click = "del(resume.work_history,$index)">删除</i></div>
+					        </li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="one five">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">教育培训</h3>
+						<b class="b1" v-on:click="add(-100,'v6','edu')">添加教育经历</b>
+						<b class="b2" v-on:click="add(-100,'v6','edu')">添加培训经历</b>
+					</div>
+					<div class="va one2 clearfix" v-bind:class="{'v-show':v6.isA}">
+						<a v-on:click="add(-1,'v6','edu')" class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>教育培训经历可以充分体现你的专业能力</i>
+							<i>更能体现你的学习能力和潜力</i>
+							<span v-on:click="add(-1,'v6','edu')">添加教育经历</span><span v-on:click="add(-1,'v6','edu')">添加培训经历</span>
+						</div>
+					</div>
+					<!-- <div class="five-nr" v-bind:class="{'v-show':v6.isB}">
+						<ul class="clearfix">
+							<li>
+								<input v-model="train.name" class="inp2 o" type="text">
+								<input v-model="train.rog" class="inp2 t" type="text">
+							</li>
+							<li>
+								<b>开始年份</b><b>开始月份</b><b>结束年份</b><b>结束月份</b>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input v-on:click="save7(edu,resume.train)" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div> -->
+					<div class="vb five-nr" v-bind:class="{'v-show':v6.isB}">
+						<ul class="clearfix">
+							<li>
+								<input v-model="edu.school" class="inp2 o" placehoder="学校名称" type="text">
+								<input v-model="edu.major" class="inp2 t" value="专业" type="text">
+							</li>
+							<li>
+								<b>开始年份</b><b>开始月份</b><b>结束年份</b><b>结束月份</b>
+							</li>
+							<li class="one-xialk1 xueli">
+								<b class="xialk1 s">{{edu.level | typeSelect "学历"}}</b>
+								<div class="xialk-nr1 xialk-nr">
+									<select v-model="edu.level">
+										<option>博士</option>
+										<option>硕士</option>
+										<option>本科</option>
+										<option>专科</option>					
+									</select>
+								</div>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input v-on:click="save(edu,'v6',resume.edu_history)" class="but1 baocun" type="button" value="保存">
+							<input v-on:click="cancel('v6',resume.edu_history)" class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="vc five2" v-bind:class="{'v-show':v6.isC}">
+						<ul class="clearfix">
+							<li v-for="item in resume.edu_history">
+								<span>{{item.school}} - {{item.major}} - {{item.level}}</span>
+								<div class="five2-1"><i v-on:click="edit('edu',item,$index,'v6')">编辑</i><i v-on:click="del(resume.edu_history,$index)">删除</i></div>
+							</li>
+							<!-- <li v-for="item in resume.train">
+								<span>{{item.name}} - {{item.rog}}</span>
+								<div class="five2-1 clearfix"><i>编辑</i><i v-on:click="del('train',$index)">删除</i></div>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+
+				<div class="one five">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">证书</h3>
+						<b v-on:click="add(-100,'v7','zhsh')">添加</b>
+					</div>
+					<div class="va one2 clearfix" v-bind:class="{'v-show':v7.isA}">
+						<a v-on:click="add(-1,'v7','zhsh')" class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>展示你获取的各种证书</i>
+							<i>能更多的获取HR的眼球哦</i>
+							<span>添加证书</span>
+						</div>
+					</div>
+					<div class="vb five-nr" v-bind:class="{'v-show':v7.isB}">
+						<ul class="clearfix">
+							<li>
+								<input v-model="zhsh.name" class="inp2 o" type="text">
+								<input v-model="zhsh.rog" class="inp2 t" type="text">
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input v-on:click="save(zhsh,'v7',resume.certificate)" class="but1 baocun" type="button" value="保存">
+							<input v-on:click="cancel('v7',resume.certificate)" class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="vc five2" v-bind:class="{'v-show':v7.isC}">
+						<ul class="clearfix tjq">
+							<li v-for="item in resume.certificate">
+								<span>{{item.name}}-{{item.rog}}</span>
+								<div class="five2-1"><i v-on:click="edit('zhsh',item,$index,'v7')">编辑</i><i v-on:click="del(resume.certificate,$index)">删除</i></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="one five">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">外语水平</h3>
+						<b v-on:click="add(-100,'v8','wy')">添加</b>
+					</div>
+					<div class="va one2 clearfix" v-bind:class="{'v-show':v8.isA}">
+						<a v-on:click="add(-1,'v8','wy')" class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>展现你良好的外语水平</i>
+							<i>可以提升你的职业竞争力哦</i>
+							<span>添加外语水平</span>
+						</div>
+					</div>
+					<div class="vb five-nr" v-bind:class="{'v-show':v8.isB}">
+						<ul class="clearfix">
+							<li>
+								<input v-model="wy.category" class="inp2 o" type="text">
+								<input class="inp2" type="text">
+							</li>
+							<li>
+								<b>听力水平</b><b>口语水平</b><b>阅读水平</b><b>写作水平</b>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input v-on:click="save(wy,'v8',resume.language)" class="but1 baocun" type="button" value="保存">
+							<input v-on:click="cancel('v8',resume.language)" class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="vc five2" v-bind:class="{'v-show':v8.isC}">
+						<ul class="clearfix">
+							<li v-for="item in resume.language">
+								<span>{{item.category}}</span>
+								<div class="five2-1 clearfix"><i v-on:click="edit('wy',item,$index,'v8')">编辑</i><i v-on:click="del(resume.language,$index)">删除</i></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- txall-l -->
+
+			<div class="txall-r">
+				
+			</div><!-- txall-r -->
+
+		</div><!-- txall -->
+	</div>
+	
+	<script type="text/javascript">
+		seajs.use("jianli2-1",function(app){
+			app.init();
+		})
+	</script>
+
+	<script>
+	// $(function(){
+
+	// var rawData = {
+
+	// 	"work_history": [
+	//                 // {
+	//                 //     company:'智联招聘',
+	//                 //     position:'销售',
+	//                 //     start_year:'',
+	//                 //     end_year:'',
+	//                 //     sales_type:'',
+	//                 //     reportto:'',
+	//                 //     subordinate:'',
+	//                 //     desc:'',
+	//                 //     sales_year:'',
+	//                 //     finish_rate:'',
+	//                 //     productions:'',
+	//                 //     sell_target:'',
+	//                 //     sell_mode:'',
+	//                 // }
+	//             ],
+	// 	"edu_history": [
+	//                 // {
+	//                 //     school:'北京交通大学',
+	//                 //     major:'计算机科学与技术',
+	//                 //     level:'学历',
+	//                 //     start_year:'开始时间',
+	//                 //     end_year:'线束时间：'
+	//                 // },
+	//                 // {
+	//                 //     school:'学校名称：',
+	//                 //     major:'专业名称：',
+	//                 //     level:'学历',
+	//                 //     start_year:'开始时间',
+	//                 //     end_year:'线束时间：'
+	//                 // }
+	//             ],
+	// 	"certificate":[
+	//              //    {
+	// 	            //     rog:'新航路',
+	// 	            //     name:'web前端',
+	// 	            //     start_year:'开始时间',
+	// 	            //     end_year:'线束时间：'
+	// 	            // },
+	// 	            // {
+	// 	            //     rog:'阿里巴巴',
+	// 	            //     name:'云计算',
+	// 	            //     start_year:'开始时间',
+	// 	            //     end_year:'线束时间：'
+	// 	            // }
+	//             ],
+	// 	"language": [
+	//                 // {
+	//                 //     category:'英语',
+	//                 //     listen: '听力',
+	//                 //     speak: '口语',
+	//                 //     read: '阅读',
+	//                 //     write: '写作'
+	//                 // },
+	//                 // {
+	//                 //     category:'西班牙',
+	//                 //     listen: '听力',
+	//                 //     speak: '口语',
+	//                 //     read: '阅读',
+	//                 //     write: '写作'
+	//                 // }
+	//             ]
+	// }
+	     
+	// 	function pub(chunk,a,b,c){
+	// 		chunk.find(a).show();
+	// 		chunk.find(b).hide();
+	// 		chunk.find(c).hide();
+	// 	}//可以
+
+	// 	 function zhengshu(id1,id2){
+			
+ //        	var source = $(id1).html();
+ //            var tp = Handlebars.compile(source);
+ //            console.log(rawData.work_history)
+ //            var str = tp(rawData);
+ //            console.log(str)
+ //        	$(id2).html(str);
+ //        }//可以
+ //        //之前这部分是在函数中写的,直接就可以用定义过的chunk,但封装成函数调用时,无法定义当前$(this),把
+
+ //        function add5(chunk,index){
+ //        	var wk = {
+ //                company:chunk.find('.o').val(),
+ //                position:chunk.find('.t').val(),
+ //                start_year:'开始时间',
+ //                end_year:'线束时间：'
+ //            }
+ //            //console.log(chunk.hasClass('yibianji'));
+ //            if(chunk.hasClass('yibianji')){
+ //            	var index1 = chunk.data('index');
+            	
+ //            	rawData.work_history[index1] = wk;
+ //            }else{
+ //            	rawData.work_history.push(wk);
+ //            }
+	// 		zhengshu('#newli5','#ul5');//注意：这个样子肯定不是通用
+	// 		chunk.find('.o').val("");
+	// 		chunk.find('.t').val("");
+ //        }
+ //        function add6(chunk,index){
+ //        	var edu = {
+ //                school:chunk.find('.o').val(),
+ //                major:chunk.find('.t').val(),
+ //                start_year:'开始时间',
+ //                end_year:'线束时间：'
+ //            }
+ //            if(chunk.hasClass('yibianji')){
+ //            	var index1 = chunk.data('index');
+ //            	rawData.edu_history[index1] = edu;
+ //            }else{
+ //            	rawData.edu_history.push(edu);
+ //            }
+	// 		zhengshu('#newli6','#ul6');//注意：这个样子肯定不是通用
+	// 		chunk.find('.o').val("");
+	// 		chunk.find('.t').val("");
+ //        }
+ //        function add7(chunk,index){
+ //        	var zhsh = {
+ //                rog:chunk.find('.o').val(),
+ //                name:chunk.find('.t').val(),
+ //                start_year:'开始时间',
+ //                end_year:'线束时间：'
+ //            }
+ //            if(chunk.hasClass('yibianji')){
+ //            	var index1 = chunk.data('index');
+ //            	rawData.certificate[index1] = zhsh;
+ //            }else{
+ //            	rawData.certificate.push(zhsh);
+ //            }
+	// 		zhengshu('#newli7','#ul7');//注意：这个样子肯定不是通用
+	// 		chunk.find('.o').val("");
+	// 		chunk.find('.t').val("");
+ //        }
+ //        function add8(chunk,index){
+ //        	var yuyan = {
+ //                category:chunk.find('.o').val(),
+ //                start_year:'开始时间',
+ //                end_year:'线束时间：'
+ //            }
+ //            if(chunk.hasClass('yibianji')){
+
+ //            	var index1 = chunk.data('index');
+ //            	//rawData.language.splice(index1,1,yuyan);
+ //            	rawData.language[index1] = yuyan;
+ //            }else{
+ //            	rawData.language.push(yuyan);
+ //            }
+	// 		zhengshu('#newli8','#ul8');//注意：这个样子肯定不是通用
+	// 		chunk.find('.o').val("");
+ //        }
+ //        function back5(chunk,index){
+ //         	var wk = rawData.work_history[index];
+	// 		chunk.find('.o').val(wk.company);
+	// 		chunk.find('.t').val(wk.position);     
+ //        }
+ //        function back6(chunk,index){
+ //         	var edu = rawData.edu_history[index];
+	// 		chunk.find('.o').val(edu.school);
+	// 		chunk.find('.t').val(edu.major);     
+ //        }
+ //        function back7(chunk,index){
+ //         	var zhsh = rawData.certificate[index];//certificate下有好多组数据!!!
+	// 		chunk.find('.o').val(zhsh.rog);//往回赋值
+	// 		chunk.find('.t').val(zhsh.name);//往回赋值
+ //        }
+ //        function back8(chunk,index){
+ //         	var yuyan = rawData.language[index];
+	// 		chunk.find('.o').val(yuyan.category);
+ //        }//对的
+
+
+ //        //不行
+	// 	// function back(chunk,index,a,b,c){
+	//     //  var nr = a[index];
+	// 	// 	chunk.find('.o').val(nr.b);
+	// 	// 	chunk.find('.t').val(nr.c);
+	// 	// 	chunk.data("index",index);
+ //        // }
+
+ //        //删除可实现通用
+	//   	function del(chunk,index,a){
+	//   		a.splice(index,1);
+	// 		if(a.length<1){
+	// 			pub(chunk,".one2",".five2",".five-nr");
+ //            }
+ //            //之前写在else里,导致只删除了数组没有刷新页面,还留一个数组项在页面上
+           
+	//   	}
+
+
+	//   	//#all-5
+	//   	$("#all-5").on("click",".ashzi",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".one2",".five2");
+	// 	//保存
+	// 	}).on("click",".baocun",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five2",".five-nr",".one2");
+	// 		chunk.find(".pub-bt b").addClass("pb");
+	// 		add5(chunk);//又是一个参数套参数                       
+	// 	//添加/编辑
+	// 	}).on("click",".pb",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		zhengshu('#newli5','#ul5');//可以                                 
+	// 		chunk.removeClass("yibianji");
+	// 	//li编辑
+	// 	}).on("click",".bianji",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		var index = $(this).parents(".everyli").attr("index");
+	// 		chunk.data("index",index);//没作用   
+	// 		console.log(chunk.data("index"));
+	// 		back5(chunk,index);//单独能用 
+	// 		chunk.addClass("yibianji");                                       
+	//   	}).on("click",".shanchu",function(){
+	// 		var chunk = $(this).parents(".five");
+	//     	var index = $(this).parents('.everyli').attr('index');
+	// 		del(chunk,index,rawData.work_history); 
+	// 		zhengshu('#newli5','#ul5');//可以             
+	// 	})
+	// 	//#all-6
+	//   	$("#all-6").on("click",".ashzi",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".one2",".five2");
+	// 	//保存
+	// 	}).on("click",".baocun",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five2",".five-nr",".one2");
+	// 		chunk.find(".pub-bt b").addClass("pb");
+	// 		add6(chunk);//又是一个参数套参数                       
+	// 	//添加/编辑
+	// 	}).on("click",".pb",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		zhengshu('#newli6','#ul6');//可以                                 
+	// 		chunk.removeClass("yibianji");
+	// 	//li编辑
+	// 	}).on("click",".bianji",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		var index = $(this).parents(".everyli").attr("index");
+	// 		//chunk.attr("index",index);
+	// 		chunk.data("index",index);
+	// 		back6(chunk,index);//单独能用
+	// 		chunk.addClass("yibianji");                                         
+	//   	}).on("click",".shanchu",function(){
+	// 		var chunk = $(this).parents(".five");
+	//     	var index = $(this).parents('.everyli').attr('index');
+	// 		// del(chunk,index,rawData.edu_history,zhengshu('#newli6','#ul6')); //存在错误
+	// 		del(chunk,index,rawData.edu_history); 
+	// 		zhengshu('#newli6','#ul6');//可以             
+	// 	})
+ //        //#all-7   
+	// 	$("#all-7").on("click",".ashzi",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".one2",".five2");
+	// 	//保存
+	// 	}).on("click",".baocun",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five2",".five-nr",".one2");
+	// 		chunk.find(".pub-bt b").addClass("pb");
+	// 		add7(chunk);//又是一个参数套参数
+	// 	//添加/编辑
+	// 	}).on("click",".pb",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		zhengshu('#newli7','#ul7');//可以
+	// 		chunk.removeClass("yibianji");
+	// 	//li编辑
+	// 	}).on("click",".bianji",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		var index = $(this).parents(".everyli").attr("index");
+	// 		chunk.data("index",index);
+	// 		back7(chunk,index);//单独能用
+	// 		chunk.addClass("yibianji");
+	//   	}).on("click",".shanchu",function(){
+	// 		var chunk = $(this).parents(".five");
+	//     	var index = $(this).parents('.everyli').attr('index');
+	// 		del(chunk,index,rawData.certificate); 
+	// 		zhengshu('#newli7','#ul7'); 
+	// 	})
+	// 	//#all-8
+	// 	$("#all-8").on("click",".ashzi",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".one2",".five2");
+	// 	//保存
+	// 	}).on("click",".baocun",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five2",".five-nr",".one2");
+	// 		chunk.find(".pub-bt b").addClass("pb");
+	// 		add8(chunk);//又是一个参数套参数                      
+	// 	//添加/编辑
+	// 	}).on("click",".pb",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		zhengshu('#newli8','#ul8');//可以                                 
+	// 		chunk.removeClass("yibianji");
+	// 	//li编辑
+	// 	}).on("click",".bianji",function(){
+	// 		var chunk = $(this).parents(".five");
+	// 		pub(chunk,".five-nr",".five2",".one2");
+	// 		chunk.find(".pub-bt b").removeClass("pb");
+	// 		var index = $(this).parents(".everyli").attr("index");
+	// 		chunk.data("index",index);
+	// 		back8(chunk,index);//单独能用 
+	// 		chunk.addClass("yibianji");                                        
+	//   	}).on("click",".shanchu",function(){
+	// 		var chunk = $(this).parents(".five");
+	//     	var index = $(this).parents('.everyli').attr('index');
+	// 		//del(chunk,index,rawData.language,zhengshu('#newli8','#ul8'));
+	// 		del(chunk,index,rawData.language); 
+	// 		zhengshu('#newli8','#ul8');//可以 
+	// 		//注意,这里是参数套参数zhengshu('#newli1','#ul7')
+	// 		//这种方法不能用的原因是,这句需要实现先删除,用这几句chunk,index,rawData.language,再刷新页面,用zhengshu('#newli8','#ul8'),但系统默认先执行带参数的参数,就会先刷新页面,再执行删除,就会出现错误。
+	// 	})
+
+
+		
+
+		
+
+		
+		
+
+
+
+
+	// })
+
+		
+		
+		
+		
+
+
+	// </script>
+</body>
+</html>

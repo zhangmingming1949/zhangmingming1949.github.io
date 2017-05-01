@@ -1,0 +1,100 @@
+{
+	"_id" : "",
+	"name":"张继科",
+	"sex" : "",
+	"age" : "29",
+	"avatar": "/asets/images/img.png",
+	"birthday": "",
+	"height":"",
+	"weight":"",
+	"city_live" : {
+	    "province" : "",
+	    "city" : ""
+	},
+	"city_birth" : {
+	    "province":"",
+	    "city":""
+	},
+	"resigned" : [],
+	"telephone" : "13718268919",
+	"email":"123456789.com",
+	"work_experience" : "",
+	"intent": [
+	    {
+	        "industry": "",
+	        "position": "",
+	        "area_province": "",
+	        "area_city": "",
+	        "salary": "",
+	        "production": "",
+	        "sell_mode": [],
+	        "business_trip": "期望工作地区"
+	    }
+	],
+	"work_history": [
+	    {
+	        "company":"张继科",
+	        "position":"张怡宁",
+	        "start_year":"",
+	        "end_year":"",
+	        "sales_type":"",
+	        "reportto":"",
+	        "subordinate":"",
+	        "desc":"",
+	        "sales_year":"",
+	        "finish_rate":"",
+	        "productions":"",
+	        "sell_target":"",
+	        "sell_mode":""
+	    }
+	],
+	"edu_history": [
+	    {
+	        "school":"123",
+	        "major":"456",
+	        "level":"博士",
+	        "start_year":"",
+	        "end_year":""
+	    }
+	],
+	"train":[
+	    {
+	        "name":"",
+	        "rog":"",
+	        "start_year":"",
+	        "end_year":""
+	    },
+	    {
+	        "name":"",
+	        "rog":"",
+	        "start_year":"",
+	        "end_year":""
+	    }
+	],
+	"certificate":[
+		{
+	        "name":"1111",
+	        "rog":"2222"
+	    },
+	    {
+	        "name":"3333",
+	        "rog":"4444"
+	    }
+	],
+	"language": [
+        {
+            "category":"英语3456",
+            "listen": "听力",
+            "speak": "口语",
+            "read": "阅读",
+            "write": "写作"
+        },
+        {
+            "category":"法语",
+            "listen": "听力",
+            "speak": "口语",
+            "read": "阅读",
+            "write": "写作"
+        }
+    ]
+}

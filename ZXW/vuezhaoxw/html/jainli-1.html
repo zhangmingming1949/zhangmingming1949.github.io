@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>新航路师徒学院，微软反盗版</title>
+    <meta name="keywords" content="关键词"/>
+    <meta name="description" content="描述"/>
+   	<link rel="stylesheet" type="text/css" href="/css/zxw.css">
+</head>
+<body>
+	<div class="zxw-top">
+		<div class="m zxw-top-nr clearfix">
+			<img src="images/bt.png" alt="">
+			<b name="" id="">王成伟</b>
+			<ul class="clearfix">
+				<li>简历管理</li>
+				<li>公司首页</li>
+				<li>发布职位</li>
+				<li>职位管理</li>
+			</ul>
+		</div>
+	</div>
+	<div class="m tishi clearfix" id="wanshan">
+		<span class="f-l">完善你的公司主页，吸引更多人才</span>
+		<i class="f-r">取消</i>
+		<i class="f-r" id="baocun">保存</i>
+	</div>
+	<div class="m txq">
+		<div class="txq-1 clearfix">
+			<div class="logo f-l"></div>
+			<ul class="gs-jsh">
+				<li class="clearfix">
+					<b class="f-l">公司简称：</b>
+					<input type="text" value="请输入简称">
+				</li>
+				<li class="clearfix">
+					<b class="f-l">公司全称：</b>
+					<input type="text" value="北京九逸英才管理咨询有限公司">
+				</li>
+				<li class="clearfix">
+					<b class="f-l">口号：</b>
+					<input type="text" value="写下振奋人心的口号，吸引更多人才">
+				</li>
+			</ul>
+		</div>
+		<div class="txq-2 clearfix">
+			<h2>编辑公司标签</h2>
+			<b>未添加标签</b>
+			<ul id="list1" class="list clearfix">
+				<li>客户资源<a href="javascript:;"></a></li>
+				<li>五险一金<a href="javascript:;"></a></li>
+				<li>交通补助<a href="javascript:;"></a></li>
+			</ul>
+			<input class="inp-1 f-l" type="text" value="" id="inp1">
+			<input class="but-1 f-l" type="button" value="添加" id="btn1"><div class="clear"></div>
+			<b class="b-2">推荐：</b>
+			<ul id="list2" class="list list-2">
+				<li>领导很好</li>
+				<li>扁平管理</li>
+				<li>环境很赞</li>
+				<li>团队积极</li>
+				<li>股票期权</li>
+			</ul>
+		</div>
+		<div class="jianjie">
+			<h3>公司简介</h3>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</div>
+	</div>
+	<script>
+		var oList = document.getElementById('list1');
+		var oLis = oList.getElementsByTagName("li");
+		var oList2 = document.getElementById('list2');
+		var oLis2 = oList2.getElementsByTagName("li");
+		var oBtn1 = document.getElementById('btn1');
+		var oBtn2 = document.getElementById('inp1');
+		function first(oParent){
+        	if(!oParent)return null;
+        	return oParent.firstElementChild || oParent.firstChild;
+    	};
+    	
+    	
+    	function tianjia(str){
+    		var li = document.createElement('li');//创建li
+			var a = document.createElement('a');//创建a(这个a与上面函数removeA中定义的变量a互不影响)
+			li.innerHTML=str;//给li赋内容
+			a.innerHTML ="";//给a赋内容
+			a.href= "javascript:;";//不跳转，保持当前的位置不变	
+			li.appendChild(a);//a加在li之后
+			oList.insertBefore(li,first(oList));//新建的li从oList的开头开始加
+			// removeA();//从新计算li的长度;
+			// function removeA(){
+    		// for(var j=0,len=oLis.length;j<len;j++){
+	    	// 	var a = oLis[j].getElementsByTagName("a")[0];
+	    	// 	//函数内部定义的变量a与其他函数内定义的a互不影响
+	    	// 	a.onclick = function(){
+	    	// 		oList.removeChild(this.parentNode);
+	    	// 	}	
+	    	// }
+	    	 for(var i=0,len=oLis.length;i<len;i++){
+            	if(oLis[i].children[0].innerHTML==str){
+                alert('已经添加过');
+                return;
+            	}
+        	}
+	    	 bindCl();
+    	// }
+    	};
+		oBtn1.onclick = function(){	
+			var str=oBtn2.value;
+			if(str==""){
+				alert("请输入内容！");
+				return;
+			}	
+			tianjia(str);
+		};
+		for(var i=0,len=oLis2.length;i<len;i++){
+			oLis2[i].onclick = function(){
+				var str=this.innerHTML;
+				tianjia(str);
+			};
+		};
+		function bindCl(){
+        	for(var i=0,len=oLis.length;i<len;i++){
+                oLis[i].children[0].onclick = function(){
+                	console.log(this.parentNode)
+                    var ind = 100;//100是全透明
+                    var obj = this.parentNode;
+                    var timer = null;
+                    var timer = setInterval(function(){
+                        ind-=10;
+                        obj.style.filter='alpha(opacity:'+ind+')';
+                        obj.style.opacity=ind/100;
+                        if(ind<=0){
+                        	oList.removeChild(obj);
+                            clearInterval(timer);
+                        }
+                    },50)  
+            }
+        }
+    }
+    bindCl();	
+	</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+@import"base";
+@mixin w-h ($a,$b){
+	width:$a;
+	height:$b;
+}
+@mixin f ($c,$d){
+	line-height:$c;
+	font-size:$d;
+}
+.zxw-top{
+	background-color:#fff;
+	border-bottom:4px #78c8fb solid;
+	.zxw-top-nr{
+		img{
+			float:left;
+			@include w-h(123px,77px);
+		}
+		b{
+			float:right;
+			margin-top:19px;
+			@include w-h (51px,43px);
+			@include f (43px,16px);
+			color:#828384;
+			padding:0 45px 0 12px;
+			background:#f4f8fb url(i/btbj-1.png) no-repeat right 18px;
+			border:1px #ecf0f4 solid;
+			font-weight:normal;	
+		}
+		ul{
+			margin:0 110px 0 188px;
+			li{
+				@include f (77px,20px);
+				float:left;
+				color:#666;
+				margin-right:42px;
+				&:hover{
+					color:#449ed7;
+				}
+			}
+		}
+	}
+}
+.tishi{
+	span{
+		@include f (62px,14px);
+		color:#666;
+	}
+	i{
+		@include f (36px,14px);
+		color:#666;
+		width:75px;
+		text-align:center;
+		margin-top:12px;
+		font-style:normal;
+		&:hover{
+			color:#fff;
+			background-color:#02a2ed;
+		}
+	}
+}
+.txq{
+	padding:39px 41px 0 59px;
+	background-color:#fff;
+	.txq-1{
+		.logo{
+		@include w-h (200px,200px);
+		background:#f4f8fb url(i/logo-bj.png) no-repeat 0 0;
+		}
+		.gs-jsh{
+			margin-left:220px;
+			li{
+				height:35px;
+				margin-bottom:20px;
+				b{
+					float:left;
+					@include w-h (80px,35px);
+					@include f (35px,14px);
+					color:#666;
+					text-align:right;
+				}
+				input{
+					display:block;
+					margin:0 0 20px 80px;
+					padding-left:10px;
+					@include w-h (287px,35px);
+					color:#bfbfbf;
+					border:1px #c2d2dc solid;
+				}
+			}	
+		}
+	}
+	.txq-2{
+		width:600px;
+		margin-top:10px;
+		padding:0 0 19px 18px;
+		background-color:#f4f8fb;
+		h2{
+			@include f (65px,18px);
+			color:#333;
+		}
+		b{
+			@include f (38px,14px);
+			color:#999;
+			float:left;
+			padding-right:16px;
+		}
+		ul{
+			li{
+				float:left;
+				margin:5px 10px 0 0;
+				@include f (26px,14px);
+				color:#666;
+				padding:0 7px 0 7px;
+				border:1px #78c8fb solid;
+				a{
+					background:#f4f8fb url(i/no.png) no-repeat right 3px;
+					@include w-h (10px,10px);
+				}
+			}
+		}
+		.list-2{
+			li{
+				border:1px #ddd solid;
+				background-color:#fff;
+				margin:20px 10px 0 0;
+			}
+		}
+		.inp-1{
+			@include w-h (163px,34px);
+			color:#bfbfbf;
+			border:1px #c2d2dc solid;
+			margin-right:10px;
+		}
+		.but-1{
+			border:none;
+			@include w-h (74px,36px);
+			@include f (36px,14px);
+			color:#fff;
+			background-color:#02a2ed;
+		}
+		.b-2{
+			margin-top:15px;
+		}
+	}
+	.jianjie{
+		padding-top:27px;
+		h3{
+			@include f (24px,18px);
+			color:#333;
+			background:#f4f8fb url(i/btbj-2.png) no-repeat 0 0;
+			padding-left:20px;
+		}
+		textarea{
+			@include w-h(599px,86px);
+			margin:16px 0 30px 0;
+		}
+	}
+}

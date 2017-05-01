@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>新航路师徒学院,我的简历</title>
+    <meta name="keywords" content="关键词"/>
+    <meta name="description" content="描述"/>
+   	<link rel="stylesheet" type="text/css" href="/css/jianli.css">
+   	<script src="/js/sea.js"></script>
+   	<script src="/js/jquery.js"></script>
+	<script src="/js/handlebars-1.1.2.js"></script>
+</head>
+<body>
+	<div class="zxw-top">
+		<div class="m zxw-top-nr clearfix">
+			<img class="f-l" src="images/bt.png" alt="">
+			<b class="f-r" name="" id="">王成伟</b>
+			<ul class="clearfix">
+				<li>简历管理</li>
+				<li>公司首页</li>
+				<li>发布职位</li>
+				<li>职位管理</li>
+			</ul>
+		</div>
+	</div>
+	<div id="all" class="all">
+		<div class="m txall clearfix">
+			<!-- 左边内容 -->
+			<div id="adiv" class="txall-l f-l">
+				<div class="top clearfix">
+					<h2>我的简历</h2>
+					<a href="#">预览简历</a>
+				</div><!-- top我的简历 -->
+				<div class="one">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">基本信息</h3>
+						<b class="pb">编辑</b>
+					</div><!-- pub-bt -->
+					<div class="tx1 clearfix"><!-- 左右的公共父级 -->
+						<div class="tx1-1 clearfix">
+							<ul class="clearfix">
+								<li><input id="e1" class="inp1" type="text" value="姓名"></li>
+								<li>
+									<b>性别：</b>
+									<label class="f-l" for="">
+										<input type="radio" name="sex">男
+										<div class="quan"></div>
+									</label>
+									<label class="f-l" for=""><input type="radio" name="sex">女</label>
+								</li>
+								<li><input id="e3" class="inp1" type="text" value="生日"></li>
+								<li class="one-xialk1">
+									<var class="xialk1">工作经验</var>
+									<div class="xialk-nr1">	
+										<select name="" id="">
+											<option value="">无</option>
+											<option value="">1年</option>
+											<option value="">2年</option>
+											<option value="">3年以上</option>
+										</select>
+									</div>
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">现居地（省）</var>
+									<div class="xialk-nr1">
+										<input type="text" value="点击输入">
+										<select name="" id="">
+											<option value="">新疆</option>
+											<option value="">西藏</option>
+											<option value="">云南</option>
+											<option value="">广西</option>
+											<option value="">广东</option>
+											<option value="">福建</option>
+											<option value="">浙江</option>
+										</select>
+									</div>	
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">现居地（市）</var>
+									<div class="xialk-nr1">
+										<input type="text" value="点击输入">
+										<select name="" id="">
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+											<option value="">4</option>
+										</select>
+									</div>
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">户口地（省）</var>
+									<div class="xialk-nr1">
+										<input type="text" value="点击输入">
+										<select name="" id="">
+											<option value="">新疆</option>
+											<option value="">西藏</option>
+											<option value="">云南</option>
+											<option value="">广西</option>
+											<option value="">广东</option>
+											<option value="">福建</option>
+											<option value="">浙江</option>
+										</select>
+									</div>
+								</li>
+								<li class="one-xialk1">
+									<var class="xialk1">户口地（市）</var>
+									<div class="xialk-nr1">
+										<input type="text" value="点击输入">
+										<select name="" id="">
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+											<option value="">4</option>
+										</select>
+									</div>
+								</li>
+							</ul>
+							<div class="pub-queren clearfix">	
+								<input class="but1 baocun" type="button" value="保存">
+								<input class="but1" type="button" value="取消">
+							</div>
+						</div>
+						<div class="tx1-2">
+							<img src="images/toux.png" alt="">
+							<p>上传头像</p>
+							<label for=""><input type="checkbox"><i>目前离职中</i></label>
+						</div>
+					</div>
+					<div class="one3 clearfix">
+						<div id="n1" class="one3-l tjq">
+							<!-- <h6>张继科<var>男/29岁</var></h6>
+							<ul id="oneul">
+								<li><i>现居地：</i><span>北京</span></li>
+								<li><i>户口地：</i><span>青岛</span></li>
+								<li><i>工作经验：</i><span>4年</span></li>
+								<li><i>目前状态：</i><span>离职</span></li>
+							</ul> -->
+						</div>
+						<img src="images/toux1.png" alt="">
+					</div>
+				</div>
+				<div class="one two">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">联系方式</h3>
+						<b class="pb">编辑</b>
+					</div><!-- pub-bt -->
+					<div class="two-nr">
+						<div class="two-tx clearfix">
+							<input class="inp2" type="text" value="电话">
+							<input class="inp2" type="text" value="邮箱">
+							<i>请输入有效的邮箱</i>
+						</div>
+						<div class="pub-queren clearfix">
+							<input class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="two2 clearfix tjq">
+						<!-- <b>18601206045</b><i>yhanwen@gmail.com</i> -->
+					</div>
+				</div><!-- tow -->
+				<div class="one three">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">个人形象</h3>
+						<b>编辑</b>
+					</div>
+					<div class="one2 clearfix">
+						<a class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>通过生活照来展示你的形象</i>
+							<i>提高对企业的吸引力</i>
+							<span>完善个人形象</span>
+						</div>
+					</div>
+					<div class="three-nr">
+						<ul class="clearfix">
+							<li><input type="text" value="身高"><i>厘米</i></li>
+							<li><input type="text" value="体重"><i>公斤</i></li>
+						</ul>
+						<ol class="clearfix">
+							<li><img src="images/shhuozh.png" alt=""><b>上传生活照</b></li>
+							<li><img src="images/shhuozh.png" alt=""><b>上传生活照</b></li>
+							<li><img src="images/shhuozh.png" alt=""><b>上传生活照</b></li>
+						</ol>
+						<div class="pub-queren clearfix">
+							<input id="b3" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="three2">
+						<ul class="clearfix tjq">
+							<!-- <li><span>身高：</span><b id="e10">182 厘米</b></li>
+							<li><span>体重：</span><b id="e12">90公斤</b></li> -->
+						</ul>
+						<div class="three-img clearfix">
+							<img class="img1" src="" alt=""><img src="" alt=""><img src="" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="one four">
+					<div class="pub-bt clearfix">
+						<h3>求职意向</h3>
+						<b>编辑</b>
+					</div>
+					<div class="one2 clearfix">
+						<a class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>填写准确的期望工作能大大提高求职成功率哦</i>
+							<i>快来添加期望工作吧！</i>
+							<span>添加期望工作</span>
+						</div>
+					</div>
+					<div class="four-nr">
+						<ul class="clearfix">
+							<li>
+								<var>期望行业:</var>
+								<div class="four-xialk1">
+									<b>（最多选择三个行业）</b>
+									<select name="" id="">
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+										<option value="">4</option>
+									</select>
+								</div>
+							</li>
+							<li><var>期望职位:</var><input class="inp3" type="text"></li>
+							<li><var>期望底薪:</var><input class="inp3" type="text"></li>
+							<li>
+								<var>期望工作地区:</var>
+								<div class="four-r clearfix">
+									<div class="four-xialk2">
+										<em>省</em>
+										<div class="xialk-nr2">
+											<input type="text" value="点击输入">
+											<select name="" id="">
+												<option value="">新疆</option>
+												<option value="">西藏</option>
+												<option value="">云南</option>
+												<option value="">广西</option>
+												<option value="">广东</option>
+												<option value="">福建</option>
+												<option value="">浙江</option>
+											</select>
+										</div>
+									</div>
+									<div class="four-xialk2">
+										<em>市</em>
+										<div class="xialk-nr2">
+											<input type="text" value="点击输入">
+											<select name="" id="">
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+												<option value="">4</option>
+												<option value="">5</option>
+												<option value="">6</option>
+											</select>
+										</div>
+									</div>
+									<label for=""><input type="checkbox"><i>可出差</i></label>
+								</div>
+							</li>
+							<li><var>期望销售产品:</var><input class="inp3" type="text"></li>
+							<li>
+								<var>期望销售方式:</var>
+								<div class="xiaoshoufsh clearfix">
+									<label for=""><input type="checkbox"><i>店面销售</i></label>
+									<label for=""><input type="checkbox"><i>渠道销售</i></label>
+									<label for=""><input type="checkbox"><i>电话销售</i></label>
+									<label for=""><input type="checkbox"><i>网络销售</i></label>
+									<label for=""><input type="checkbox"><i>面访销售</i></label>
+									<label for=""><input type="checkbox"><i>大客户销售</i></label>
+								</div>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="four2">
+						<ul class="four2-nr tjq">
+							<!-- <li><span>期望行业：</span><b>IT/互联网</b></li>
+							<li><span>期望职位：</span><b>销售经理</b></li>
+							<li><span>期望工作地区：</span><b>北京</b></li>
+							<li><span>期望底薪：</span><b>20k</b></li>
+							<li><span>期望销售产品：</span><b>汽车</b></li>
+							<li><span>销售方式：</span><b>电话销售</b></li> -->
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="one five">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">工作经历</h3>
+						<b>添加</b>
+					</div>
+					<div class="one2 clearfix">
+						<a class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>针对销售职位定制的工作经历，更加专业</i>
+							<i>可以更加充分的展示你的工作能力</i>
+							<span>添加工作经历</span>
+						</div>
+					</div>
+					<div class="five-nr">
+						<ul class="clearfix">
+							<li>
+								<input class="inp2 o" type="text">
+								<input class="inp2 t" type="text">
+							</li>
+							<li>
+								<b>开始年份</b><b>开始月份</b><b>结束年份</b><b>结束月份</b>
+							</li>
+							<li><label class="clearfix" for=""><input type="checkbox"><i>管理岗位</i></label>
+								<input class="inp2" value="汇报对象" type="text">
+								<input class="inp2" value="下属人数" type="text">
+							</li>
+							<li><textarea class="textarea1" name="" id="" cols="30" rows="10"></textarea></li>
+							<li>
+								<div>
+									<h5>让数据说话，快来展示你的傲人业绩吧~</h5>
+									<!-- <ul class="clearfix"> -->
+										<!-- <li>
+											<b>月销售额</b>
+											<input class="inp4" type="text">
+											<i>万元</i>
+											<b>年销售额</b>
+											<input class="inp4" type="text">
+											<i>万元</i>
+										</li>
+										<li class="dd2">
+											<b>目标完成率</b>
+											<input class="inp4" type="text">
+											<b>产品</b>
+											<input class="inp5" type="text">
+										</li>
+										<li>
+											<var>销售对象</var>
+											<b>销售方式</b><input class="inp4" type="text">
+										</li> -->
+									<!-- </ul> -->
+								</div>
+							</li>
+							<li>
+								<label class="clearfix" for=""><input type="checkbox"><i>添加更多描述</i></label>
+								<textarea class="textarea2" name="" id="" cols="30" rows="10"></textarea>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div id="c5" class="five2">
+						<ul class="clearfix newul tjq">
+							<!-- <li>
+								<span>前程无忧 - 销售经理</span>
+								<div class="five2-1"><i>编辑</i><i>删除</i></div>
+							</li>
+							<li>
+								<span>智联招聘 - 销售经理</span>
+								<div class="five2-1 clearfix"><i>编辑</i><i>删除</i></div>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+				<div class="one five">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">教育培训</h3>
+						<b class="b1">添加教育经历</b>
+						<b class="b2">添加培训经历</b>
+					</div>
+					<div class="one2 clearfix">
+						<a class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>教育培训经历可以充分体现你的专业能力</i>
+							<i>更能体现你的学习能力和潜力</i>
+							<span>添加教育经历</span><span>添加培训经历</span>
+						</div>
+					</div>
+					<div class="five-nr">
+						<ul class="clearfix">
+							<li>
+								<input class="inp2 o" value="培训名称" type="text">
+								<input class="inp2 t" value="培训机构" type="text">
+							</li>
+							<li>
+								<b>开始年份</b><b>开始月份</b><b>结束年份</b><b>结束月份</b>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input id="b6" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="five-nr">
+						<ul class="clearfix">
+							<li>
+								<input class="inp2 o" value="学校名称" type="text">
+								<input class="inp2 t" value="专业" type="text">
+							</li>
+							<li>
+								<b>开始年份</b><b>开始月份</b><b>结束年份</b><b>结束月份</b>
+							</li>
+							<li>
+								<b class="s">学历</b>
+								<div class="xialk-nr2">
+									<select name="" id="">
+										<option value="">博士</option>
+										<option value="">硕士</option>
+										<option value="">本科</option>
+										<option value="">专科</option>					
+									</select>
+								</div>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input id="b6" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="five2">
+						<ul class="clearfix tjq">
+							<!-- <li>
+								<span>北京交通大学 - 计算机科学与技术 - 硕士</span>
+								<div class="five2-1"><i>编辑</i><i>删除</i></div>
+							</li>
+							<li>
+								<span>培训名称 - 培训机构</span>
+								<div class="five2-1 clearfix"><i>编辑</i><i>删除</i></div>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="one five">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">证书</h3>
+						<b>编辑</b>
+					</div>
+					<div class="one2 clearfix">
+						<a id="a5" class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>展示你获取的各种证书</i>
+							<i>能更多的获取HR的眼球哦</i>
+							<span>添加证书</span>
+						</div>
+					</div>
+					<div class="five-nr">
+						<ul class="clearfix">
+							<li>
+								<input class="inp2" type="text">
+								<input class="inp2" type="text">
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input id="b7" class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div class="five2">
+						<ul id="ul" class="clearfix tjq">
+							<!-- <li>
+								<span>证书名称1-证书机构1</span>
+								<div class="five2-1"><i>编辑</i><i>删除</i></div>
+							</li>
+							<li>
+								<span>证书名称2-证书机构2</span>
+								<div class="five2-1 clearfix"><i>编辑</i><i>删除</i></div>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+				
+				<script>
+					
+           		</script>
+
+
+
+
+
+
+				<div class="one five">
+					<div class="pub-bt clearfix">
+						<h3 class="f-l">外语水平</h3>
+						<b>编辑</b>
+					</div>
+					<div class="one2 clearfix">
+						<a class="ashzi" href="javascript:;"></a>
+						<div class="one2-r">
+							<i>展现你良好的外语水平</i>
+							<i>可以提升你的职业竞争力哦</i>
+							<span>添加外语水平</span>
+						</div>
+					</div>
+					<div class="five-nr">
+						<ul class="clearfix">
+							<li>
+								<input class="inp2" type="text">
+								<input class="inp2" type="text">
+							</li>
+							<li>
+								<b>听力水平</b><b>口语水平</b><b>阅读水平</b><b>写作水平</b>
+							</li>
+						</ul>
+						<div class="pub-queren clearfix">
+							<input class="but1 baocun" type="button" value="保存">
+							<input class="but1" type="button" value="取消">
+						</div>
+					</div>
+					<div id="c8" class="five2">
+						<ul class="clearfix tjq">
+							<!-- <li>
+								<span>英语</span>
+								<div class="five2-1"><i>编辑</i><i>删除</i></div>
+							</li>
+							<li>
+								<span>西班牙语</span>
+								<div class="five2-1 clearfix"><i>编辑</i><i>删除</i></div>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</div><!-- txall-l -->
+
+			<div class="txall-r">
+				
+			</div><!-- txall-r -->
+
+		</div><!-- txall -->
+	</div>
+	<!-- 1 -->
+	<script id="newli1" type="text/x-handlebars-template">
+		{{#this}}
+			<h6>{{name}}<var>{{sex}}/{{age}}岁</var></h6>
+			<ul id="oneul">
+				<li><i>现居地：</i><span>{{city_live.city}}</span></li>
+				<li><i>户口地：</i><span>{{city_birth.city}}</span></li>
+				<li><i>工作经验：</i><span>{{work_experience}}</span></li>
+				<li><i>目前状态：</i><span>{{resigned}}</span></li>
+			</ul>
+		{{/this}}
+	</script>
+	<!-- 2 -->
+	<script id="newli2" type="text/x-handlebars-template">
+		{{#this}}
+			<b>{{telephone}}</b><i>{{email}}</i>
+		{{/this}}
+	</script>
+	<!-- 3 -->
+	<script id="newli3" type="text/x-handlebars-template">
+		{{#this}}
+			<li><span>身高：</span><b>{{height}}厘米</b></li>
+			<li><span>体重：</span><b>{{weight}}公斤</b></li>
+		{{/this}}
+	</script>
+	<!-- 4 -->
+	<script id="newli4" type="text/x-handlebars-template">
+		{{#intent}}
+			<li><span>期望行业：</span><b>{{industry}}</b></li>
+			<li><span>期望职位：</span><b>{{position}}</b></li>
+			<li><span>期望工作地区：</span><b>{{area_city}}</b></li>
+			<li><span>期望底薪：</span><b>{{salary}}</b></li>
+			<li><span>期望销售产品：</span><b>{{production}}</b></li>
+			<li><span>销售方式：</span><b>{{sell_mode}}</b></li>
+		{{/intent}}
+	</script>
+	<!-- 5 -->
+	<script id="newli5" type="text/x-handlebars-template">
+		{{#each work_history}}
+			<li index="{{@index}}">
+				<span>{{company}} - {{position}}</span>
+				<div class="five2-1"><i class="bianji">编辑</i><i class="shanchu">删除</i></div>
+			</li>
+		{{/each}}
+	</script>
+	<!-- 6 -->
+	<script id="newli6" type="text/x-handlebars-template">
+		{{# each edu_history}}
+			<li class="everyli" index="{{@index}}">
+				<span>{{school}} - {{major}} - {{level}}</span>
+				<div class="five2-1"><i class="bianji">编辑</i><i class="shanchu">删除</i></div>
+			</li>
+		{{/each}}
+		{{#each train}}
+			<li class="everyli" index="{{@index}}">
+				<span>{{name}} - {{rog}}</span>
+				<div class="five2-1 clearfix"><i class="bianji">编辑</i><i class="shanchu">删除</i></div>
+			</li>
+		{{/each}}
+	</script>
+	<!-- 7 -->
+	<script id="newli7" type="text/x-handlebars-template">
+		{{#each certificate}}
+			<li class="everyli" index="{{@index}}">
+				<span>{{name}}-{{rog}}</span>
+				<div class="five2-1"><i class="bianji">编辑</i><i class="shanchu">删除</i></div>
+			</li>
+		{{/each}}
+	</script>
+	<!-- 8 -->
+	<script id="newli8" type="text/x-handlebars-template">
+		{{#each language}}
+			<li class="everyli" index="{{@index}}">
+				<span>{{category}}</span>
+				<div class="five2-1"><i class="bianji">编辑</i><i class="shanchu">删除</i></div>
+			</li>
+		{{/each}}
+	</script>
+
+	<script type="text/javascript">
+		seajs.use("jianli",function (app) {
+	        app.init();
+	    });
+	</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>新航路师徒学院，微软反盗版</title>
+    <meta name="keywords" content="关键词"/>
+    <meta name="description" content="描述"/>
+   	<link rel="stylesheet" type="text/css" href="/css/zxw.css">
+</head>
+<body>
+	<div class="zxw-top">
+		<div class="m zxw-top-nr clearfix">
+			<img class="f-l" src="images/bt.png" alt="">
+			<b class="f-r" name="" id="">王成伟</b>
+			<ul class="clearfix">
+				<li class="f-l">简历管理</li>
+				<li class="f-l">公司首页</li>
+				<li class="f-l">发布职位</li>
+				<li class="f-l">职位管理</li>
+			</ul>
+		</div>
+	</div>
+	<div class="m tishi clearfix" id="wanshan">
+		<span class="f-l">完善你的公司主页，吸引更多人才</span>
+		<i class="f-r">取消</i>
+		<i class="f-r" id="baocun">保存</i>
+	</div>
+	<div class="m txq">
+		<div class="txq-1 clearfix">
+			<div class="logo f-l"></div>
+				<ul class="gs-jsh">
+					<li class="clearfix">
+						<b class="f-l">公司简称：</b>
+						<input type="text" value="请输入简称">
+					</li>
+					<li class="clearfix">
+						<b class="f-l">公司全称：</b>
+						<input type="text" value="北京九逸英才管理咨询有限公司">
+					</li>
+					<li class="clearfix">
+						<b class="f-l">口号：</b>
+						<input type="text" value="写下振奋人心的口号，吸引更多人才">
+					</li>
+				</ul>
+			</div>
+		<div class="txq-2 clearfix" id="a-div">
+			<h2>编辑公司标签</h2>
+			<b>未添加标签</b>
+			<ul id="list1" class="list clearfix">
+				<li>客户资源<a href="javascript:;"></a></li>
+				<li>五险一金<a href="javascript:;"></a></li>
+				<li>交通补助<a href="javascript:;"></a></li>
+			</ul>
+			<input class="inp-1 f-l" type="text" value="" id="inp1">
+			<input class="but-1 f-l" type="button" value="添加" id="btn1"><div class="clear"></div>
+			<b class="b-2">推荐：</b>
+			<ul id="list2" class="list list-2">
+				<li class="li2">领导很好</li>
+				<li class="li2">扁平管理</li>
+				<li class="li2">环境很赞</li>
+				<li class="li2">团队积极</li>
+				<li class="li2">股票期权</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		//事件绑定函数，之后调用
+		function addEvent(obj,type,fn){
+	     	if(obj.addEventListener){
+	         	 obj.addEventListener(type,fn,false);
+	    	 	}else {
+	         obj.attachEvent('on'+type,fn);
+	    	 }
+		}
+		var odiv = document.getElementById('a-div');//获取公共父级
+	    var oList = document.getElementById('list1');//定义一个之后需要使用的全局变量
+		//调用事件绑定函数
+		addEvent(odiv,'click',function(e){
+        	var oEvent = e || window.event;//获取事件
+       		var oTarget = oEvent.target || oEvent.srcElement;//定义具体操作对象:事件委托
+       		//添加函数，之后调用
+	        function tianjia(str){
+				var li = document.createElement('li');//创建li
+				var a = document.createElement('a');//创建a
+				li.innerHTML=str;//给li赋内容
+				a.innerHTML ="";//给a赋内容
+				a.href= "javascript:;";//不跳转，保持当前的位置不变	
+				li.appendChild(a);//a加在li之后
+				oList.insertBefore(li,first(oList));//新建的li从oList的开头开始加
+		    }
+		    //first封装，之后调用
+		    function first(oParent){
+	        	if(!oParent)return null;
+	        	return oParent.firstElementChild || oParent.firstChild;
+	    	}
+	    	//点击事件1
+	        if(oTarget.className.toLowerCase()=='inp-1 f-l'){
+	        	oTarget.style.color="#333"
+			}
+			//点击事件2
+			if(oTarget.className.toLowerCase()=="but-1 f-l"){
+ 				var oBtn2 = document.getElementById('inp1');
+ 				var str=oBtn2.value;
+ 				if(str==""){
+			 		alert("请输入内容！");
+					return;
+				}
+				tianjia(str);//调用添加函数
+ 			}
+ 			//点击事件3
+ 			if(oTarget.tagName.toLowerCase()=="a"){
+ 				bindCl();
+ 				function bindCl(){
+		        	var ind = 100;//100是全透明
+		            var obj = oTarget.parentNode;
+		            //注意！事件绑定函数中没有“this”,需要使用当前作用对象：oTarget
+		            var timer = null;
+		            var timer = setInterval(function(){
+		                ind-=10;
+		                obj.style.filter='alpha(opacity:'+ind+')';
+		                obj.style.opacity=ind/100;
+		                if(ind<=0){
+		                	oList.removeChild(obj);
+		                    clearInterval(timer);
+		                }
+		            },50)
+		    	}
+ 			}
+ 			//点击事件4
+ 			if(oTarget.className.toLowerCase()=="li2"){
+ 				// var str=this.innerHTML;//这个是错误的，不能用this
+ 				var str=oTarget.innerHTML;
+ 				//注意！事件绑定函数中没有“this”,需要使用当前作用对象：oTarget
+				tianjia(str);
+			}
+ 		})
+	</script>
+</body>
+</html>

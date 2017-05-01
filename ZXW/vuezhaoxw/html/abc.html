@@ -1,0 +1,47 @@
+ function addEvent(obj,type,fn){
+	 //     	if(obj.addEventListener){
+	 //         	 obj.addEventListener(type,fn,false);
+	 //    	 	}else {
+	 //         obj.attachEvent('on'+type,fn);
+	 //    	 }
+		// }
+		// var odiv = document.getElementById('adiv');//获取公共父级
+		// addEvent(odiv,'click',function(e){
+  //       	var oEvent = e || window.event;//获取事件
+  //      		var oTarget = oEvent.target || oEvent.srcElement;//定义具体操作对象:事件委托
+	 //    	//点击事件1
+	 //        if(oTarget.className.toLowerCase()=='ashzi'){
+	 //        	var aa = oTarget.parentNode;
+	 //        	aa.style.display = "none";
+	 //        	next(aa).style.display = "block";
+		// 	}
+		// 	//点击事件2
+		// 	if(oTarget.className.toLowerCase()=='but1 baocun'){
+	 //        	var ba = oTarget.parentNode;
+		// 		var bb = ba.parentNode;
+	 //        	bb.style.display = "none";
+	 //        	next(bb).style.display = "block";
+		// 	}
+ 	// 	})
+
+
+
+ 	//转到填写部分
+		function aaa(id1){
+			var aa = id1.parentNode;
+			aa.style.display="none";
+			next(aa).style.display="block";	
+		}
+		//转到编辑完成页面
+		function bbb(id1,id2){
+			var bb = id1.parentNode.parentNode;
+			bb.style.display="none";
+			next(bb).style.display="block";
+			id2.style.display="block";
+		}
+		//转到编辑部分
+		function ccc(id1,id2){
+			id2.style.display="none";
+			previous(id2).style.display="block";
+			id1.style.display="none";	
+		}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>新航路师徒学院，微软反盗版</title>
+    <meta name="keywords" content="关键词"/>
+    <meta name="description" content="描述"/>
+   	<link rel="stylesheet" type="text/css" href="/css/zxw.css">
+</head>
+<body>
+	<div class="zxw-top">
+		<div class="m zxw-top-nr clearfix">
+			<img class="f-l" src="images/bt.png" alt="">
+			<b class="f-r" name="" id="">王成伟</b>
+			<ul class="clearfix">
+				<li class="f-l">简历管理</li>
+				<li class="f-l">公司首页</li>
+				<li class="f-l">发布职位</li>
+				<li class="f-l">职位管理</li>
+			</ul>
+		</div>
+	</div>
+	<div class="m tishi clearfix">
+		<span class="f-l">完善你的公司主页，吸引更多人才</span>
+		<i class="f-r">取消</i>
+		<i class="f-r">保存</i>
+	</div>
+	<div class="m txq">
+		<div class="txq-1 clearfix">
+			<div class="logo f-l"></div>
+			<ul class="gs-jsh">
+				<li class="clearfix">
+					<b class="f-l">公司简称：</b>
+					<input type="text" value="请输入简称">
+				</li>
+				<li class="clearfix">
+					<b class="f-l">公司全称：</b>
+					<input type="text" value="北京九逸英才管理咨询有限公司">
+				</li>
+				<li class="clearfix">
+					<b class="f-l">口号：</b>
+					<input type="text" value="写下振奋人心的口号，吸引更多人才">
+				</li>
+			</ul>
+		</div>
+		<div class="txq-2 clearfix">
+			<h2>编辑公司标签</h2>
+			<b>未添加标签</b>
+			<ul id="list1" class="list clearfix">
+				<li>客户资源<a class="a1" href="javascript:;">&nbsp;</a></li>
+				<li>客户资源<a class="a1" href="javascript:;">&nbsp;</a></li>
+				<li>客户资源<a class="a1" href="javascript:;">&nbsp;</a></li>
+
+			</ul>
+			<input class="inp-1 f-l" type="text" value="" id="inp1">
+			<input class="but-1 f-l" type="button" value="添加" id="btn1"><div class="clear"></div>
+			<b class="b-2">推荐：</b>
+			<ul id="list2" class="list list-2">
+				<li>领导很好</li>
+				<li>扁平管理</li>
+				<li>环境很赞</li>
+				<li>团队积极</li>
+			</ul>
+		</div>
+		<div class="jianjie">
+			<h3>公司简介</h3>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</div>
+	</div>
+	<script>
+		var oList = document.getElementById('list1');
+		var oLis = oList.getElementsByTagName("li");
+		var oList2 = document.getElementById('list2');
+		var oLis2 = oList2.getElementsByTagName("li");
+		var oBtn1 = document.getElementById('btn1');
+		var oBtn2 = document.getElementById('inp1');
+		function first(oParent){
+        	if(!oParent)return null;
+        	return oParent.firstElementChild || oParent.firstChild;
+    	};
+		oBtn1.onclick = function(){
+			var li = document.createElement('li');
+			var a = document.createElement('a');
+			li.innerHTML=oBtn2.value;
+			a.innerHTML = '&nbsp;';
+			a.href= "javascript:;";
+			a.onclick = function (){
+				oList.removeChild(this.parentNode);
+			}
+			li.appendChild(a);
+			oList.insertBefore(li,first(oList));
+		}
+		for(var i=0,len=oLis2.length;i<len;i++){
+			oLis2[i].onclick = function(){
+				var li = document.createElement('li');
+				var a = document.createElement('a');
+				li.innerHTML=this.innerHTML;
+				a.innerHTML = '&nbsp;';
+				a.href= "javascript:;";
+				a.onclick = function (){
+				oList.removeChild(this.parentNode);
+			}
+			li.appendChild(a);
+			oList.insertBefore(li,first(oList));
+			}
+		}
+	</script>
+
+</body>
+</html>
