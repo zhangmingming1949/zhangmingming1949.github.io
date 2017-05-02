@@ -14,7 +14,7 @@ define(function(require,exports,module){
 		},
 		render:function(){
             $.ajax({
-                url:'/html/data/data.json',
+                url:'/ZXW/vuezhaoxw/html/data/data.json',
                 dataType:"JSON",
                 type:"get"
             }).done(function(cfg){
