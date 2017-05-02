@@ -1,7 +1,7 @@
 define(function(require,exports,module){
 	require
 	var p = {
-		
+		alert(1);
 		_init:function(){
 			p.bbb();
 			p._fliter();
